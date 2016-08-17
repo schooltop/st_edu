@@ -1,0 +1,34 @@
+default: &default
+  adapter: mysql2
+  pool: 5
+  reconnect: true
+  username: root
+  password: root
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+  <<: *default
+  database: fullcalendarBranch
+
+
+test:
+  <<: *default
+  database: fullcalendarBranch
+
+staging:
+  <<: *default
+  database: fullcalendarBranch
+  username: root
+  password: root
+  host: localhost
+  port: 3306
+  socket: /var/run/mysqld/mysqld.sock
+
+production:
+  <<: *default
+  database: fullcalendarBranch
+  username: root
+  password: root
+  host: localhost
+  port: 3306
+  socket: /var/run/mysqld/mysqld.sock
