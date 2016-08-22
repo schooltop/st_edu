@@ -34,7 +34,7 @@ class StudentCourseRecord < ActiveRecord::Base
         subject = "取消选课通知"
         record.had_email = 1
         record.save
-        Emailer.relest_record_notice(recevier,subject, message)
+        Emailer.relest_record_notice(recevier,subject, message).deliver
       end
     end
 	
